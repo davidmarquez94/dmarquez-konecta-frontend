@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="container">
+	<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+		<div class="form_main">
+                <h4 class="heading"><strong>Nueva </strong> Venta <span></span></h4>
+                <div class="form">
+                <form id="contactFrm" name="contactFrm" [formGroup]="saleForm" (ngSubmit)="createSale(saleForm.value)">
+                    <select formControlName="employee_id" class="form-control">
+                        <option *ngFor="let employee of this.employees" value="{{ employee.id }}">{{ employee.name }}</option>
+                    </select>
+                    <select formControlName="product_id" class="form-control">
+                        <option *ngFor="let product of this.products" value="{{ product.id }}">{{ product.name }}</option>
+                    </select>
+                    <input type="number" placeholder="Cantidad" formControlName="quantity" class="txt">
+                    <input type="submit" value="Registrar" name="submit" class="txt2">
+                </form>
+            </div>
+            </div>
+        </div>
+	</div>
+</div>
+<app-footer></app-footer>

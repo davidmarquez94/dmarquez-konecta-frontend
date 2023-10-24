@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="container" class="body-info">
+	<div class="row">
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-sm" (click)="newProduct()" id="new-product">
+                Nuevo producto
+            </button>
+            <button class="btn btn-secondary btn-sm" (click)="newSale()">
+                Nueva venta
+            </button>
+        </div>
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Referencia</th>
+                    <th>Precio</th>
+                    <th>Peso</th>
+                    <th>Stock</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of this.products">
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.reference }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.weight }}</td>
+                    <td>{{ product.stock }}</td>
+                    <td>{{ product.category.name }}</td>
+                    <td>
+                        <button class="btn btn-secondary btn-sm" (click)="editProduct(product.id)">
+                            Editar
+                        </button>&nbsp;
+                        <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.id)">
+                            Eliminar    
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+</div>
+
+<app-footer></app-footer>

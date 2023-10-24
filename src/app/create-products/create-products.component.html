@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="container">
+	<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+		<div class="form_main">
+                <h4 class="heading"><strong>Nuevo </strong> Producto <span></span></h4>
+                <div class="form">
+                <form id="contactFrm" name="contactFrm" [formGroup]="newForm" (ngSubmit)="createProduct(newForm.value)">
+                    <input type="text" placeholder="Nombre del producto"  formControlName="name" class="txt">
+                    <input type="text" placeholder="Referencia del producto" formControlName="reference" class="txt">
+                    <input type="number" placeholder="Precio" formControlName="price" class="txt">
+                    <input type="number" placeholder="Peso" formControlName="weight" class="txt">
+                    <input type="number" placeholder="Stock" formControlName="stock" class="txt">
+                    <select formControlName="category_id" class="form-control">
+                        <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.name }}</option>
+                    </select>
+                    <input type="submit" value="Registrar" name="submit" class="txt2">
+                </form>
+            </div>
+            </div>
+        </div>
+	</div>
+</div>
+<app-footer></app-footer>
